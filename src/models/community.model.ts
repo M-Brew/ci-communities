@@ -10,7 +10,11 @@ const communitySchema = new Schema(
     name: String,
     slug: String,
     description: String,
-    count: {
+    members: {
+      type: Number,
+      default: 0
+    },
+    events: {
       type: Number,
       default: 0
     },

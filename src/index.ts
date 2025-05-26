@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import communityRoutes from "./routes/communities";
+import eventRoutes from "./routes/events";
 
 const { PORT, DB_URI } = process.env;
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/communities", communityRoutes);
+app.use("/api/events", eventRoutes);
 
 mongoose.connect(DB_URI);
 mongoose.connection.on("open", () =>
